@@ -20,7 +20,8 @@ sendFile.default <- function(db, fileName, validate = FALSE, verbose = FALSE, ..
 
   stopifnot(file.exists(src))
 
-  rsynccli(src, dest, args = args, pre = pre)
+
+  rsynccli(src, dest, args = args, pre = pre, ...)
 
   if (validate) validateFile(db, fileName)
   db
